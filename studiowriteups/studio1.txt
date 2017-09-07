@@ -8,10 +8,10 @@ Students in your studio group:
 
     Name        Student ID (begins with a 4)
 	
-1.
-2.
-3.
-4.
+1.ZHIKAI CHEN     451501
+2.ZIHAO  JI	      459033
+3.YUSHU LIU       457978
+4.Feiyang Yang    458715
 5.
 6.
 
@@ -23,7 +23,7 @@ What are the exact, closed-form formulas for the ticker counts in:
 
 	ProbA?   n   (I'm giving you this answer, make sure it agrees with what you saw)
 
-	ProbB?  
+	ProbB?   n(n-1)/2
 
 	ProbC?
 
