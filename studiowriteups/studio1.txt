@@ -48,7 +48,7 @@ Part C
 
 Part D
 Proof: 
-1. n = O(an+b)
+1. n = O(an+b);
     Choose c = 2/a    n0 = - 2b/a
     
 2.  an + b = O(n)
