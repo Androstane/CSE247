@@ -12,11 +12,17 @@ import timing.Ticker;
 public class LinkedListWithTail<T> implements List<T> {
 	
 	private ListNode<T> head;
+	private ListNode<T> tail;
 	private Ticker ticker;
+	int size =1;
+	
 	
 	public LinkedListWithTail(Ticker ticker) {
 		this.head = null;   // nothing in our list yet
+		this.tail = null;
 		this.ticker = ticker;
+		
+		
 	}
 
 	/**
@@ -27,6 +33,7 @@ public class LinkedListWithTail<T> implements List<T> {
 	 * 
 	 * Use that tail reference to add to the end of the list, instead
 	 *   of looping to find the end.
+	 * @return 
 	 */
 	@Override
 	public void addLast(T thing) {
@@ -35,6 +42,8 @@ public class LinkedListWithTail<T> implements List<T> {
 			p.value = thing;
 			head = p;
 			ticker.tick(3);  // for the 3 statements above
+			tail = p;
+			size = 1;
 		}
 		else {
 			ListNode<T> q = new ListNode<T>();
@@ -44,14 +53,10 @@ public class LinkedListWithTail<T> implements List<T> {
 			// searches for the end of the list
 			// Modify this code using your new tail reference
 			//  and get rid of this loop!
-			//
-			ListNode<T> p = head;
-			while (p.next != null) {
-				ticker.tick();
-				p = p.next;
-			}
+			tail.next = q;
+			tail = q;			
 			//  p is where it needs to be slide 201
-			p.next = q;
+			size = size + 1;	
 			ticker.tick(3);  // for the 3 statements not in the loop
 		}
 		
@@ -63,12 +68,7 @@ public class LinkedListWithTail<T> implements List<T> {
 	 */
 	@Override
 	public int getSize() {
-		int ans = 0;
-		for (ListNode<T> p = this.head; p != null; p = p.next) {
-			ans = ans + 1;
-			ticker.tick();
-		}
-		return ans;
+		return size;
 	}
 
 	/**
