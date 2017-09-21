@@ -8,10 +8,10 @@ Students in your studio group:
 
     Name        Student ID (begins with a 4)
 	
-1.
-2.
-3.
-4.
+1.Yushu Liu     457978
+2.Zhikai Chen   451501
+3.Zihao Ji		459033
+4.Feiyang Yang	458715
 5.
 6.
 
@@ -19,15 +19,15 @@ Students in your studio group:
 Part A
 
 What are three data types that can serve as T?
-
+Time, Integer, Date
 Which class did you pick to examine its compareTo method?
-
+Class Integer
 How did its compareTo method impose a natural order on that class's instances?
-
+-1(Integer<Another Integer), 0(equal), 1(else)
 Part B
 
 How does compareTo work?  Does it always return either -1, 0, or +1?
-
+All
 Part C
 
 From your inspection of the LinkedList<T> class's source code:
@@ -35,11 +35,11 @@ Given a LinkedList<T> of size n, what is the asymptotic complexity, worst-case,
 for performing each of the following operations?
 
   1)  Appending to the end of that list  addLast(..)
-  
+  1
   2)  Prepending to the beginning of that list   addFirst(...)
-  
+  1
   3)  Inserting an element in the middle of the list  add(size/2, .....)
-  
+  n
 And for your implementation of a PriorityQueue using the Unordered List, 
 given n elements already in the queue, what is the asymptotic complexity, 
 worst-case for performing each of the following operations?
