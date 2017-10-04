@@ -90,7 +90,7 @@ public class TestMinHeap {
 	}
 	
 	@Test
-	public void testUsingHeapSort() {
+	public void testUsingHeapsSort() {
 		HeapSort heaper = new HeapSort();
 		heaper.loadInput(new IntArrayGenerator().genInput(InputSpec.gen(1000000)));
 		heaper.reset(new Ticker());

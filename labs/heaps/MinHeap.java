@@ -66,6 +66,11 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		//
 		// FIXME
 		//
+		array[size]=ans;
+        ticker.tick();
+        array[size].loc = size;
+        decrease(size);
+		ticker.tick();
 		return ans;
 	}
 
@@ -96,11 +101,43 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	 *     decreased in value
 	 */
 	void decrease(int loc) {
+		//if the root then no action 
+		if (loc == 1) {
+			ticker.tick();
+			return;
+		}
+		//If not root
+		else {
+			//If heap property is not maintained then swap
+			if (array[loc/2].getValue().compareTo(array[loc].getValue()) > 0) {
+			   //swap
+			   moveItem(loc, loc/2);
+			   ticker.tick();
+			   decrease(loc/2);
+			   ticker.tick();
+			}
+		}
+	}
+		
+				
 		//
 		// As described in lecture
-		//
-		
+		// Swap p_1 and p_2 if heap property is not maintained (in decrease) 
+	void moveItem(int from, int to) {
+		Decreaser<T> p_1 = array[from];
+		Decreaser<T> p_2 = array[to];
+		array[from] = p_2;
+		array[to] = p_1;
+	//p_1.loc = to;
+	//p_2.loc = from;
+		array[from].loc=from;
+		array[to].loc=to;
+		ticker.tick();
 	}
+			
+	    // Check if heap property is maintained
+
+		
 	
 	/**
 	 * Described in lecture, this method will return a minimum element from
@@ -119,6 +156,14 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		//
 		// FIXME
 		//
+		array[1] = array [size];
+		array[1].loc = 1;
+		array[size] = null;
+		size--;
+		if (size > 1) {
+			heapify(1);
+		}
+		ticker.tick();
 		return ans;
 	}
 
@@ -134,7 +179,60 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		// As described in lecture
 		//  FIXME
 		//
-	}
+		if (size == 2 * where ) {
+			ticker.tick();
+			//only need to check if need to swap left child and parent
+			if(array[where*2].getValue().compareTo(array[where].getValue()) < 0){
+				moveItem(where, where*2);
+				ticker.tick();
+			}
+			else {
+				return;		
+			}
+		}
+		if (size < 2*where || array[where*2] == null) {
+			ticker.tick();
+			return;
+		}
+		
+		//if (size < 2* where+1||)
+				
+		if (size > 2* where) {
+			ticker.tick();
+			//move the smallest to the parent.
+			//if the smallest already at parent
+			if(array[where].getValue().compareTo(array[where*2].getValue()) < 0 
+					&& array[where].getValue().compareTo(array[where*2+1].getValue())<0 ) {
+				ticker.tick();
+				return;
+			}
+			//if the left child is the smallest
+			else if(array[where*2].getValue().compareTo(array[where].getValue()) <= 0 
+					&& array[where*2].getValue().compareTo(array[where*2+1].getValue())<=0) {
+				    moveItem (where, where*2);
+				    heapify(where*2);
+				    ticker.tick();
+				}
+			else if(array[where*2+1].getValue().compareTo(array[where].getValue()) <= 0 
+					&& array[where*2+1].getValue().compareTo(array[where*2].getValue())<0){
+			    moveItem (where, where*2+1);
+			    heapify(where*2+1);
+			    ticker.tick();
+			}
+			else {
+				return;
+			}
+		}
+				
+						
+		else {
+		//done
+			ticker.tick();
+			return;
+		}
+	  }
+
+
 	
 	/**
 	 * Does the heap contain anything currently?
