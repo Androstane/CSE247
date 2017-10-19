@@ -56,5 +56,6 @@ public class VertexAndDist implements Comparable<VertexAndDist> {
 		Integer thisDist = this.distance;
 		return thisDist.compareTo(dist);
 	}
+
 	
 }

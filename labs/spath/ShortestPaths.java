@@ -54,7 +54,7 @@ public class ShortestPaths {
 	public void run() {
 		Ticker ticker = new Ticker();
 		MinHeap<VertexAndDist> pq = new MinHeap<VertexAndDist>(30000, ticker);
-
+		ticker.tick(2);
 		//
 		// Initially all vertices are placed in the heap
 		//   infinitely far away from the start vertex
@@ -65,6 +65,7 @@ public class ShortestPaths {
 			VertexAndDist a = new VertexAndDist(v, inf);
 			Decreaser<VertexAndDist> d = pq.insert(a);
 			map.put(v, d);
+			ticker.tick(4);
 		}
 
 
@@ -78,14 +79,25 @@ public class ShortestPaths {
 		// and then decrease it using the Decreaser handle
 		//
 		startVertDist.decrease(startVertDist.getValue().sameVertexNewDistance(0));
-
-
+		ticker.tick(2);
 		//
 		// OK you take it from here
-		// Extract nodes from the pq heap
-		//   and act upon them as instructed in class and the text.
-		//
-		// FIXME
+		// when the priority quene is not empty
+		while(pq.isEmpty()==false){
+			VertexAndDist current = pq.extractMin();
+			// For all the edges adjacent to the current vertex,
+			for(Edge e: current.getVertex().edgesFrom()){
+				//for all edge calculate the distance
+				Decreaser<VertexAndDist> X=map.get(e.to);
+				int new_distance=current.getDistance()+weights.get(e);
+				int original_distance = X.getValue().getDistance();
+				//compare the original distance and new distance 
+				if (new_distance <original_distance) {
+					X.decrease(X.getValue().sameVertexNewDistance(new_distance));
+					toEdge.put(e.to, e);
+				}
+			}
+		}
 	}
 
 	
@@ -105,7 +117,11 @@ public class ShortestPaths {
 		//
 		// FIXME
 		//
-
+		
+		while(endVertex != startVertex){
+			path.addFirst(toEdge.get(endVertex));
+			endVertex = toEdge.get(endVertex).from;
+		}
 		return path;
 	}
 	
@@ -121,8 +137,6 @@ public class ShortestPaths {
 		for(Edge e : path) {
 			pathValue += weights.get(e);
 		}
-		
 		return pathValue;
-		
 	}
 }
