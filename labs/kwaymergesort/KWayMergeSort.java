@@ -2,6 +2,8 @@ package kwaymergesort;
 
 import timing.Ticker;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 public class KWayMergeSort {
 	
 	/**
@@ -26,13 +28,58 @@ public class KWayMergeSort {
 		// Use the ticker as you normally would, to account for
 		// the operations taken to perform the K-way merge sort.
 		//
+		//if size = 0 or 1, return input
 		Integer[] ans = new Integer[n];
-		for (int i=0; i < n; ++i) {
-			ans[i] = input[i];
+		if(n <= 1){
+			ticker.tick();
+			return input;
+		}
+		//else recursively call merge sort on list  (left:K, right n-K)
+		else{
+			Integer[][] L = new Integer[K][n/K];
+			for(int i = 0; i < n; i++){
+				L[i/(n/K)][i%(n/K)] = input[i];		
+				ticker.tick();
+			}
+			for(int i = 0; i < K; i++) {
+				L[i] = kwaymergesort(K, L[i], ticker);
+				ticker.tick();
+			}
+			ans = merge(L, ticker);
 			ticker.tick();
 		}
-		
 		return ans;
 	}
+	public static Integer[] merge(Integer[][] pieces, Ticker ticker){
+        int k = pieces.length;
+        int size = pieces[0].length;
+        if (k == 1) {
+        	ticker.tick();
+        	return pieces[0];        
+        }
+        else {
+        int[] track = new int[k];
+        Integer[] merged = new Integer[k * size];
+        int counter = 0;
+        ticker.tick();
+        while (counter < k * size){
+            int min = Integer.MAX_VALUE;
+            int checking = 0;
+            ticker.tick(); 
+            for (int i = 0; i < k; i++){
+                if (track[i] < size && pieces[i][track[i]] < min){
+                        min = pieces[i][track[i]];
+                        checking = i;
+                        ticker.tick();
+                    }
+                }                
+            track[checking] = track[checking]+1;            
+            merged[counter] = min;
+            counter = counter +1;		
+            ticker.tick();
+    	}
+        return merged;
+        }
 
-}
+        }
+    }
