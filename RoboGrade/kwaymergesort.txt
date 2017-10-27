@@ -1,0 +1,120 @@
+-------------------
+CSE247 Robot tester starts testing kwaymergesort on 2017-10-27 17:13:46 -0500
+
+========
+Testing in ./GradingRepos/repos/cse247-f17-students-yushu.liu: kwaymergesort as of 2017-10-26 11:30
+========
+Now in: /Users/tdelanuez/247f17/cse247-support/GradingRepos/repos/cse247-f17-students-yushu.liu
+Your branch is up-to-date with 'origin/master'.
+HEAD is now at 645fc82 tickes
+No local changes to save
+
+Already up-to-date.
+Going back in time to: 2017-10-26 11:30
+At hash 645fc825a61012784bf03e0b84bd5227d4356018
+
+Buildfile: /Users/tdelanuez/247f17/cse247-support/build.xml
+
+copytest:
+     [echo] would copy from /Users/roncytron/git/cse247-f17-students key yushu.liu testfilesource test/TestMergeSort package kwaymergesort repo ./GradingRepos/repos/cse247-f17-students-yushu.liu
+Compiling the code
+Buildfile: /Users/tdelanuez/247f17/cse247-support/build.xml
+
+compile:
+     [echo] Compiling kwaymergesort/KWayMergeSort
+    [mkdir] Created dir: /Users/tdelanuez/247f17/cse247-support/GradingRepos/repos/cse247-f17-students-yushu.liu/bin
+    [javac] Compiling 1 source file to /Users/tdelanuez/247f17/cse247-support/GradingRepos/repos/cse247-f17-students-yushu.liu/bin
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Buildfile: /Users/tdelanuez/247f17/cse247-support/build.xml
+
+compile:
+     [echo] Compiling kwaymergesort/test/TestMergeSort
+    [javac] Compiling 1 source file to /Users/tdelanuez/247f17/cse247-support/GradingRepos/repos/cse247-f17-students-yushu.liu/bin
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Running test test.TestMergeSort
+Buildfile: /Users/tdelanuez/247f17/cse247-support/build.xml
+
+test:
+    [junit] Running kwaymergesort.test.TestMergeSort
+    [junit] Testsuite: kwaymergesort.test.TestMergeSort
+    [junit] 32-way merge sort of 32768 integers
+    [junit] 16-way merge sort of 256 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 4-way merge sort of 4 integers
+    [junit] 8-way merge sort of 8 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 32-way merge sort of 1024 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 32-way merge sort of 32768 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 32-way merge sort of 32768 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 8-way merge sort of 64 integers
+    [junit] 8-way merge sort of 8 integers
+    [junit] 32-way merge sort of 1024 integers
+    [junit] 4-way merge sort of 4 integers
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.272 sec
+    [junit] Output:
+    [junit] 32-way merge sort of 32768 integers
+    [junit] 16-way merge sort of 256 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 4-way merge sort of 4 integers
+    [junit] 8-way merge sort of 8 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 32-way merge sort of 1024 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 32-way merge sort of 32768 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 32-way merge sort of 32768 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 8-way merge sort of 64 integers
+    [junit] 8-way merge sort of 8 integers
+    [junit] 32-way merge sort of 1024 integers
+    [junit] 4-way merge sort of 4 integers
+    [junit] 
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.272 sec
+    [junit] ------------- Standard Output ---------------
+    [junit] 32-way merge sort of 32768 integers
+    [junit] 16-way merge sort of 256 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 4-way merge sort of 4 integers
+    [junit] 8-way merge sort of 8 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 32-way merge sort of 1024 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 32-way merge sort of 32768 integers
+    [junit] 16-way merge sort of 16 integers
+    [junit] 32-way merge sort of 32768 integers
+    [junit] 8-way merge sort of 512 integers
+    [junit] 16-way merge sort of 4096 integers
+    [junit] 8-way merge sort of 64 integers
+    [junit] 8-way merge sort of 8 integers
+    [junit] 32-way merge sort of 1024 integers
+    [junit] 4-way merge sort of 4 integers
+    [junit] ------------- ---------------- ---------------
+    [junit] 
+    [junit] Testcase: sortTest took 0.253 sec
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+================
+Lab is counted as working
+================
+
+CSE247 Robot tester ends testing kwaymergesort on 2017-10-27 17:13:51 -0500
+-------------------
