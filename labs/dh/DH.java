@@ -21,9 +21,8 @@ public class DH {
 	 * @return
 	 */
 	public long getPubKey() {
-		return 0; // FIXME
+		return MExp.gToTheXModP(base,this.privKey,this.modulus); 
 	}
-	
 	/**
 	 * Compute Diffie--Hellman agreement:  raise the other agent's public key
 	 *   to this private key power, mod the common modulus.
@@ -31,7 +30,7 @@ public class DH {
 	 * @return
 	 */
 	public long getAgreedNum(long otherPubKey) {
-		return 0;  // FIXME
+		return MExp.gToTheXModP(otherPubKey,this.privKey,this.modulus); 
 	}
 	
 }
