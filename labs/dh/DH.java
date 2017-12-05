@@ -22,7 +22,6 @@ public class DH {
 	 */
 	public long getPubKey() {
 		return MExp.gToTheXModP(base,this.privKey,this.modulus); 
-		{}
 	}
 	/**
 	 * Compute Diffie--Hellman agreement:  raise the other agent's public key
